@@ -13,7 +13,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
 
-public class Swaroop121Sort {
+public class MRjob2 {
 
 
  public static class MapSort extends Mapper<Text, Text, IntWritable, Text> {
@@ -38,7 +38,7 @@ public class Swaroop121Sort {
 
 	Configuration conf1 = new Configuration();
     Job job1 = Job.getInstance(conf1, "uri sort");
-    job1.setJarByClass(Swaroop121Sort.class);
+    job1.setJarByClass(MRjob2.class);
     job1.setMapperClass(MapSort.class);
     job1.setReducerClass(ReducerSort.class);
     job1.setMapOutputKeyClass(IntWritable.class);
