@@ -16,7 +16,7 @@ public class MRjob1 {
             StringTokenizer itr = new StringTokenizer(value.toString());
             while(itr.hasMoreTokens()){
                 s = itr.nextToken();
-                if(s.startsWith("/") && !(s.endsWith("/"))
+                if(s.startsWith("/") && !(s.endsWith("/")))
                     context.write(new Text(s), new IntWritable(1));
             }
         }
