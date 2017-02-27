@@ -1,9 +1,9 @@
-# MapReduce-Word-count-with-sort
+# MapReduce-SortURI_on_Docker
 
  With the given three weblog files from Canvas, weblog-1995-7-1.txt, weblog-1995-7-2.txt, and weblog-1995-7-3.txt, extracted from http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html. 
 This Java-based code on the MapReduce framework  aggregates the hit count of each URI in those three weblog files and sort hit count in ascending order.
 
-Further, the program is run on the docker environemnt with a hadoop cluster of 1 namenode and 3 datanodes. 
+Further, the program is run on the docker environment with a hadoop cluster of 1 namenode and 3 datanodes. 
 The docker-compose file is cloned from https://github.com/sfedyakov/hadoop-271-cluster and those steps were followed to setup hadoop cluster.
 
 Steps:
@@ -30,6 +30,7 @@ jar cf MRjob2.jar   MRjob2*.class
 curl -LO https://github.com/swaroopmc/MapReduce-Word-count-with-sort/blob/master/weblog-1995-7-1.txt
 curl -LO https://github.com/swaroopmc/MapReduce-Word-count-with-sort/blob/master/weblog-1995-7-2.txt
 curl -LO https://github.com/swaroopmc/MapReduce-Word-count-with-sort/blob/master/weblog-1995-7-3.txt
+
 hdfs dfs -put  weblog-1995-7-1.txt /tmp/sort/input/weblog-1995-7-1.txt
 hdfs dfs -put  weblog-1995-7-2.txt /tmp/sort/input/weblog-1995-7-2.txt
 hdfs dfs -put  weblog-1995-7-3.txt /tmp/sort/input/weblog-1995-7-3.txt
@@ -44,9 +45,7 @@ docker exec namenode hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/MR2job2
 
 ```
 
-Links that are followed:
-
-https://github.com/sfedyakov/hadoop-271-cluster
+Useful Links:
 
 https://docs.docker.com/compose/gettingstarted/
 
