@@ -1,0 +1,29 @@
+// docker-compose file cloned and edited from https://github.com/sfedyakov/hadoop-271-cluster/blob/master/docker-compose.yml
+
+version: '2'
+services:
+  namenode:
+    image: sfedyakov/hadoop-271-cluster 
+    container_name: namenode
+    hostname: namenode
+    networks:
+      - sort
+    domainname: sort
+    ports:
+      - "8088:8088"
+      - "50090:50090"
+      - "19888:19888"
+    command: "/etc/bootstrap.sh -d -namenode"
+
+  datanode:
+    depends_on:
+      - namenode
+    image: sfedyakov/hadoop-271-cluster
+    networks:
+      - appnet
+    command: "/etc/bootstrap.sh -d -datanode"
+
+networks:
+  sort:
+    external:
+      name: sort
