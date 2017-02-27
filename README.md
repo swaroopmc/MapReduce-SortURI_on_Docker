@@ -9,6 +9,7 @@ The docker-compose file is cloned from https://github.com/sfedyakov/hadoop-271-c
 Steps:
 
 Running a Hadoop Cluster on Docker(local machine)
+prepare docker-compose.yml with code as in the repo and run below commands to build hadoop cluster
 
 ```
 docker network create sort
