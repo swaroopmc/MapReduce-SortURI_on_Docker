@@ -1,7 +1,7 @@
 # MapReduce-SortURI_on_Docker
 
- With the given three weblog files from Canvas, weblog-1995-7-1.txt, weblog-1995-7-2.txt, and weblog-1995-7-3.txt, extracted from http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html. 
-This Java-based code on the MapReduce framework  aggregates the hit count of each URI in those three weblog files and sort hit count in ascending order.
+ Java-based code on the MapReduce framework  to aggregate the hit count of URI in ascending order
+ Data: http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html. 
 
 Further, the program is run on the docker environment with a hadoop cluster of 1 namenode and 3 datanodes. 
 The docker-compose file is cloned from https://github.com/sfedyakov/hadoop-271-cluster and those steps were followed to setup hadoop cluster.
